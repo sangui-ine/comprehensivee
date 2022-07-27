@@ -8,13 +8,13 @@
 		<version>2.7.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>comprehensivee</groupId>
-	<artifactId>comprehensivee</artifactId>
+	<groupId>compreehensive</groupId>
+	<artifactId>compreehensive</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>comprehensivee</name>
-	<description>comprehensivee</description>
+	<name>compreehensive</name>
+	<description>compreehensive as</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -50,7 +50,6 @@
 	</dependencies>
 
 	<build>
-	<finalName>employee</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -65,6 +64,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>Employee</finalName>
 	</build>
 
 </project>
