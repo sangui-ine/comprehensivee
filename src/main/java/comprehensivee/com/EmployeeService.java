@@ -1,18 +1,16 @@
 package comprehensivee.com;
-
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import org.apache.logging.log4j.util.PropertySource.Comparator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 
 import comprehensivee.com.exceptionhandler.EmployeeAlreadyExit;
 
 @Service
-public class EmployeeService extends Comparator {
-	private static final int List =0;
+public class EmployeeService  {
 	@Autowired
 	private repo repository;
 	public Employee addEmployee(Employee e)throws EmployeeAlreadyExit{
@@ -54,6 +52,18 @@ public class EmployeeService extends Comparator {
 		Employee emp = repository.findById(id).orElse(null);
 		emp.setSalary(salary);
 		return repository.save(emp);	
+	
+}
+
+	public List<Employee> getAllEmployeesInDescendingOrderBySalary() {
+		List<Employee>list=repository.findAll().stream().sorted(Comparator.comparing(Employee::getSalary)
+				.reversed()).collect(Collectors.toList());
+		list.forEach(emp ->System.out.println("Id:"+emp.getId()+"Name:"+emp.getName()+
+				"salary:"+emp.getSalary()+"Designation:"+emp.getDesignation()));
+		return list;
 	}
+	
+	
+	
 	
 }

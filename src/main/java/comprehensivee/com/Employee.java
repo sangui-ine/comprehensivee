@@ -1,5 +1,7 @@
 package comprehensivee.com;
 
+
+
 import java.util.Objects;
 
 import javax.persistence.Column;
@@ -8,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
 
 @Entity
 @Table(name="employees")
@@ -76,7 +80,9 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", salary=" + salary + ", designation=" + designation + "]";
 	}
-	
+	public int compare(Employee o1 , Employee o2) {
+		return (int) (o2.getSalary()-o1.getSalary());
+	}
 	
 
 }

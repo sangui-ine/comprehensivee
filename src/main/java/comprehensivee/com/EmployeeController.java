@@ -48,6 +48,8 @@ public class EmployeeController {
 	public Employee edityEmployeeBySalary(@PathVariable int id,@PathVariable int salary) {
 		return es.editEmployeeBySalary(id, salary);	
 	}
-		
-			
+	@GetMapping("/employees/salary")
+	public List<Employee>getAllEmployeesInDescendingOrderBySalary(){
+		return es.getAllEmployeesInDescendingOrderBySalary();
+	}
 }
