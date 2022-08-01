@@ -1,4 +1,4 @@
 FROM openjdk:11
-ADD target/employee.jar employee.jar
+ADD target/Employee.jar Employee.jar
 EXPOSE 8091
-ENTRYPOINT ["java","-jar","employee.jar"]
+ENTRYPOINT ["java","-jar","Employee.jar"]
